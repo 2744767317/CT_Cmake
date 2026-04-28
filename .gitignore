@@ -1,0 +1,56 @@
+# Build directories
+CMakeFiles/
+build/
+Debug/
+Release/
+HNUCT.dir/
+HNUCT_autogen/
+
+# IDE configuration
+.qt/
+.qtcreator/
+.qtc_clangd/
+*.user
+*.slnx
+
+# Compilation artifacts (except those in detector/x64 and motor/)
+*.pdb
+*.obj
+*.ilk
+*.exp
+*.tlog
+*.lastbuildstate
+*.recipe
+
+# CMake files (except CMakeLists.txt and Eigen3Config.cmake)
+CMakeCache.txt
+*.cmake
+!CMakeLists.txt
+!Eigen3Config.cmake
+
+# Compressed files
+*.rar
+*.zip
+*.7z
+
+# Logs
+*.log
+
+# Qt auto-generated files
+moc_*.cpp
+moc_*.cpp.d
+uic_*.cpp
+qrc_*.cpp
+
+# Explicitly allow detector SDK headers and runtime files
+!detector/*.h
+!detector/x64/
+!detector/x64/*.dll
+!detector/x64/*.db
+!detector/x64/*.lic
+!detector/x64/*.exe
+
+# Explicitly allow motor control library files
+!motor/*.h
+!motor/*.dll
+!motor/*.lib

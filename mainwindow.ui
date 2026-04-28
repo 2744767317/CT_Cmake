@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HNUCT</class>
+ <widget class="QMainWindow" name="HNUCT">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>1200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>医学图像软件</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="tabHome">
+       <attribute name="title">
+        <string>主页面</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>320</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>电机</string>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>941</width>
+             <height>87</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,3,1,3">
+            <item>
+             <widget class="QComboBox" name="comboMotorPort"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnMotorConnect">
+              <property name="text">
+               <string>连接</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnMotorDisconnect">
+              <property name="text">
+               <string>断开</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QFormLayout" name="formLayout">
+              <property name="formAlignment">
+               <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+              <item row="0" column="0">
+               <widget class="QLabel" name="labelMotorConnectionStatus">
+                <property name="text">
+                 <string>Connection</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="lbMotorConnectionStatusValue">
+                <property name="text">
+                 <string>Not connected</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="labelMotorOperationStatus">
+                <property name="text">
+                 <string>Operation</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="lbMotorOperationStatusValue">
+                <property name="text">
+                 <string>Idle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QScrollArea" name="scrollMotorAxes">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>130</y>
+             <width>1520</width>
+             <height>250</height>
+            </rect>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="motorAxesContainer">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>1518</width>
+              <height>248</height>
+             </rect>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>探测器</string>
+          </property>
+          <widget class="QWidget" name="layoutWidgetAppConfig">
+           <property name="geometry">
+            <rect>
+             <x>21</x>
+             <y>61</y>
+             <width>871</width>
+             <height>121</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="1" column="2">
+             <widget class="QPushButton" name="btnChangeAppMode">
+              <property name="text">
+               <string>模式修改</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="leWorkDir">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>请选择工作目录...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="btnSelectWorkDir">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>浏览...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="cbAppMode"/>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_29">
+              <property name="text">
+               <string>工作目录</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_30">
+              <property name="text">
+               <string>工作模式</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="btnDetectorConnect">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>连接</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="btnDetectorDisconnect">
+              <property name="text">
+               <string>断开</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>400</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>光源</string>
+          </property>
+          <widget class="QWidget" name="horizontalLayoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>571</width>
+             <height>103</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="0">
+             <widget class="QLineEdit" name="leXRayNetPort">
+              <property name="text">
+               <string>127.0.0.1:3600</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="btnXRayDisconnect">
+              <property name="text">
+               <string>断开</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="btnXRayConnect">
+              <property name="text">
+               <string>连接</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLineEdit" name="leXRayExePath">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>36</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+               </font>
+              </property>
+              <property name="placeholderText">
+               <string>请选择光源软件exe路径...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="btnSelectXRayExePath">
+              <property name="text">
+               <string>浏览...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="layoutWidgetXRayStatus">
+           <property name="geometry">
+            <rect>
+             <x>630</x>
+             <y>40</y>
+             <width>361</width>
+             <height>280</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayoutXRayStatus">
+            <property name="verticalSpacing">
+             <number>10</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="labelXRayConnectionStatus">
+              <property name="text">
+               <string>连接状态</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="lbXRayConnectionStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="labelXRayHvStatus">
+              <property name="text">
+               <string>高压状态</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="lbXRayHvStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="labelXRaySystemMode">
+              <property name="text">
+               <string>系统模式</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lbXRaySystemModeValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="labelXRayFaultStatus">
+              <property name="text">
+               <string>故障信息</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="lbXRayFaultStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="labelXRayInterlockStatus">
+              <property name="text">
+               <string>联锁环境</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="lbXRayInterlockStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="labelXRayBoardStatus">
+              <property name="text">
+               <string>控制状态</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLabel" name="lbXRayBoardStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="layoutWidgetXRayControl">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>160</y>
+             <width>618</width>
+             <height>129</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayoutXRayControl">
+            <item row="0" column="0">
+             <widget class="QLabel" name="labelXRayVoltage">
+              <property name="text">
+               <string>电压 (kV)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="dSpinXRayVoltage"/>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="labelXRayCurrent">
+              <property name="text">
+               <string>电流 (uA)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QSpinBox" name="spinXRayCurrentUa"/>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="btnXRayApplySettings">
+              <property name="text">
+               <string>应用参数</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QPushButton" name="btnXRayOpen">
+              <property name="text">
+               <string>打开光源</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2" colspan="2">
+             <widget class="QPushButton" name="btnXRayClose">
+              <property name="text">
+               <string>关闭光源</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="layoutWidgetXRayMetrics">
+           <property name="geometry">
+            <rect>
+             <x>1010</x>
+             <y>40</y>
+             <width>471</width>
+             <height>228</height>
+            </rect>
+           </property>
+           <layout class="QFormLayout" name="formLayout_2">
+            <property name="verticalSpacing">
+             <number>9</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="labelXRaySetStatus">
+              <property name="text">
+               <string>设定值</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="lbXRaySetStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="labelXRayMeasureStatus">
+              <property name="text">
+               <string>实测值</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="lbXRayMeasureStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="labelXRayTargetStatus">
+              <property name="text">
+               <string>靶电流</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="lbXRayTargetStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="labelXRayExposure">
+              <property name="text">
+               <string>曝光时间</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="lbXRayExposureValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="labelXRayArcStatus">
+              <property name="text">
+               <string>放电计数</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="lbXRayArcStatusValue">
+              <property name="text">
+               <string>未连接</string>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabAcquire">
+       <attribute name="title">
+        <string>采集页面</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayoutAcquirePage">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayoutAcquirePage" stretch="3,4">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutAcquireLeft">
+            <item>
+             <widget class="QGroupBox" name="groupBoxAcquireCorrection">
+              <property name="title">
+               <string>校正选择</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutAcquireCorrection">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutAcquireCorrection">
+                 <item>
+                  <widget class="QCheckBox" name="cbCorrectionOffset">
+                   <property name="text">
+                    <string>Offset</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="cbCorrectionGain">
+                   <property name="text">
+                    <string>Gain</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="cbCorrectionDefect">
+                   <property name="text">
+                    <string>Defect</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLabel" name="lbAcquireCorrectionStatus">
+                 <property name="text">
+                  <string>当前校正: 未知</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxAcquireControl">
+              <property name="title">
+               <string>采集控制</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayoutAcquireControl">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelAcquireSaveDir">
+                 <property name="text">
+                  <string>保存父目录</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="leAcquireSaveDir">
+                 <property name="placeholderText">
+                  <string>请选择采集保存目录</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QPushButton" name="btnSelectAcquireSaveDir">
+                 <property name="text">
+                  <string>浏览...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelAcquireSessionDir">
+                 <property name="text">
+                  <string>当前会话目录</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" colspan="2">
+                <widget class="QLineEdit" name="leAcquireSessionDir">
+                 <property name="placeholderText">
+                  <string>采集开始后自动生成</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="3">
+                <layout class="QHBoxLayout" name="horizontalLayoutAcquireButtons">
+                 <item>
+                  <widget class="QPushButton" name="btnAcquireSingle">
+                   <property name="text">
+                    <string>单帧采集</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnAcquireStart">
+                   <property name="text">
+                    <string>开始连续采集</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnAcquireStop">
+                   <property name="text">
+                    <string>停止采集</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="3" column="0" colspan="3">
+                <widget class="QLabel" name="lbAcquireStatus">
+                 <property name="text">
+                  <string>探测器未连接</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="3">
+                <widget class="QLabel" name="lbAcquireFrameInfo">
+                 <property name="text">
+                  <string>暂无帧信息</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacerAcquire">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBoxAcquirePreview">
+            <property name="title">
+             <string>图像预览</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayoutAcquirePreview">
+             <item>
+              <widget class="QLabel" name="lbAcquirePreview">
+               <property name="minimumSize">
+                <size>
+                 <width>640</width>
+                 <height>640</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Shape::Box</enum>
+               </property>
+               <property name="text">
+                <string>暂无图像</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabRecon">
+       <attribute name="title">
+        <string>重建页面</string>
+       </attribute>
+       <widget class="QWidget" name="gridLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>841</width>
+          <height>167</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="leProjFolder">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>请选择目录</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="btnSelectProjFolder">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>投影文件夹目录</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>重建CT保存路径</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="btSelectReconSavePath">
+           <property name="text">
+            <string>浏览...</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="3,3,2">
+           <item>
+            <widget class="QRadioButton" name="rbCUDA">
+             <property name="text">
+              <string>CUDA 重建</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rbCPU">
+             <property name="text">
+              <string>CPU 重建</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="leReconSavePath">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>请选择路径</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_7">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>220</y>
+          <width>551</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>投影几何参数</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>SID</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>角度数</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinAngleNum">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinSDD">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>9999.989999999999782</double>
+           </property>
+           <property name="value">
+            <double>1500.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>SDD</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDoubleSpinBox" name="dSpinSID">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>9999.989999999999782</double>
+           </property>
+           <property name="value">
+            <double>1000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>偏置 X</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="dSpinOffsetX">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="minimum">
+            <double>-99.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>偏置 Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinOffsetY">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="minimum">
+            <double>-99.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_8">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>440</y>
+          <width>551</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>探测器参数</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_9">
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>像素 Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="dSpinDetSpacingX">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>1000.990000000000009</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>U 大小</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinDetSpacingY">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>1000.990000000000009</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>像素 X</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>V 大小</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="spinDetU">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>512</number>
+           </property>
+           <property name="displayIntegerBase">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QSpinBox" name="spinDetV">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>30</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_9">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>620</y>
+          <width>551</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>重建体积参数</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>体积 X</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinVolSpacingY">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>999.990000000000009</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinVolSpacingX">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>9.000000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="spinVolY">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>512</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="spinVolX">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>512</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>体素 Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>体积 Y</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>体素 X</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>体积 Z</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="spinVolZ">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>30</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>体素 Z</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QDoubleSpinBox" name="dSpinVolSpacingZ">
+           <property name="suffix">
+            <string>mm</string>
+           </property>
+           <property name="maximum">
+            <double>999.990000000000009</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>220</y>
+          <width>551</width>
+          <height>621</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>重建参数</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>重建算法</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cbReconAlgm">
+             <item>
+              <property name="text">
+               <string>FDK</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>SART</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QStackedWidget" name="swReconParam">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="pageFDK">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="cbFDKFoV">
+               <property name="text">
+                <string>FoV</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>truncationCorrection</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="dSpinFDKtrucCorrect"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="dSpinFDKhannCut"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>hannCutFrequency</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="pageSART">
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="spinSARTSubset">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_28">
+               <property name="text">
+                <string>子集数量</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="spinSARTIter">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_27">
+               <property name="text">
+                <string>TV 迭代次数</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QCheckBox" name="cbSARTFoV">
+               <property name="text">
+                <string>FoV</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>迭代次数</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QDoubleSpinBox" name="dSpinSARTTVGamma"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>TV 迭代步长</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>迭代步长</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="dSpinSARTLambda"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSpinBox" name="spinSARTTVIter"/>
+             </item>
+             <item row="6" column="1">
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="btnReconEx">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>30</y>
+          <width>201</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>执行重建</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnReconCancel">
+        <property name="geometry">
+         <rect>
+          <x>930</x>
+          <y>110</y>
+          <width>201</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>终止重建</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbReconProgress">
+        <property name="geometry">
+         <rect>
+          <x>1150</x>
+          <y>40</y>
+          <width>181</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabVis">
+       <attribute name="title">
+        <string>可视化页面</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayoutVis">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayoutVis" stretch="3,1">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutVisLeft">
+            <item>
+               <layout class="QHBoxLayout" name="horizontalLayoutVisLoad">
+                <item>
+                 <widget class="QLineEdit" name="leVisImagePath">
+                  <property name="placeholderText">
+                   <string>请选择医学影像文件...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnVisLoadImage">
+                  <property name="text">
+                   <string>浏览...</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnVisSaveImage">
+                  <property name="text">
+                   <string>保存图像</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btnVisLoadTestImage">
+                  <property name="text">
+                   <string>测试图像</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cbVisBackgroundColor">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>黑色</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>白色</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>灰色</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>蓝色</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxVisViewer">
+              <property name="title">
+               <string>图像查看</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVisViewer">
+               <item>
+                <widget class="QWidget" name="widgetVisImageViewer"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayoutVisRight">
+            <item>
+             <widget class="QGroupBox" name="groupBoxVisWindowLevel">
+              <property name="title">
+               <string>窗位窗宽调节</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVisWindowLevel">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutVisLevel">
+                 <item>
+                  <widget class="QLabel" name="labelVisLevel">
+                   <property name="text">
+                    <string>窗位:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="dSpinVisLevel">
+                   <property name="decimals">
+                    <number>2</number>
+                   </property>
+                   <property name="value">
+                    <double>128.0</double>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QSlider" name="sliderVisLevel">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutVisWidth">
+                 <item>
+                  <widget class="QLabel" name="labelVisWidth">
+                   <property name="text">
+                    <string>窗宽:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDoubleSpinBox" name="dSpinVisWidth">
+                   <property name="decimals">
+                    <number>2</number>
+                   </property>
+                   <property name="value">
+                    <double>255.0</double>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QSlider" name="sliderVisWidth">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxVisHistogram">
+              <property name="title">
+               <string>直方图</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVisHistogram">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutVisHistogramMode">
+                 <item>
+                  <widget class="QLabel" name="labelVisHistogramMode">
+                   <property name="text">
+                    <string>刻度模式:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cbVisHistogramMode">
+                   <item>
+                    <property name="text">
+                     <string>线性</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>对数</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QWidget" name="widgetVisHistogram"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacerVis">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxVisZoom">
+              <property name="title">
+               <string>缩放控制</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVisZoom">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutVisZoom">
+                 <item>
+                  <widget class="QLabel" name="labelVisZoom">
+                   <property name="text">
+                    <string>缩放:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinVisZoom">
+                   <property name="suffix">
+                    <string>%</string>
+                   </property>
+                   <property name="minimum">
+                    <number>10</number>
+                   </property>
+                   <property name="maximum">
+                    <number>500</number>
+                   </property>
+                   <property name="value">
+                    <number>100</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QSlider" name="sliderVisZoom">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="minimum">
+                  <number>10</number>
+                 </property>
+                 <property name="maximum">
+                  <number>500</number>
+                 </property>
+                 <property name="value">
+                  <number>100</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBoxVisSlice">
+              <property name="title">
+               <string>NII切片控制</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVisSlice">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayoutVisSlice">
+                 <item>
+                  <widget class="QLabel" name="labelVisSlice">
+                   <property name="text">
+                    <string>切片:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinVisSlice">
+                   <property name="minimum">
+                    <number>0</number>
+                   </property>
+                   <property name="maximum">
+                    <number>100</number>
+                   </property>
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QSlider" name="sliderVisSlice">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="minimum">
+                  <number>0</number>
+                 </property>
+                 <property name="maximum">
+                  <number>100</number>
+                 </property>
+                 <property name="value">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\xraycontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\xrayworker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\winevent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detectorcontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detectorworker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\acquisitionsaveworker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\fdkpipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\motorcontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\motorworker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\sartpipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\workdirmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\reconworker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\imageviewer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\histogramwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\xraycontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\xrayworker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayAttrDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayAuthDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayCmdDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayDetFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayEnumDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayErrDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayEventDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayFpdSys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayFpdSysEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\IRayVariant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\winevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detector\Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detectorcontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\detectorworker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\acquisitionsaveworker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\fdkpipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\motorcontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\motorworker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\motor\MCC6DLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\sartpipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\workdirmanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\reconworker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\imageviewer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\histogramwidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\include_Release\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\include_RelWithDebInfo\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\CMakeFiles\b3c1d111ab229469012c590df0250389\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\mainwindow.ui" />
+    <None Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\autouic_Debug.stamp" />
+    <None Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\autouic_Release.stamp" />
+    <None Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="C:\Users\Administrator\Desktop\GuangSuo\HNUCT_codex\HNUCT_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7187A961-EB43-35E1-8495-DCBD476B9E7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{69196D1B-D19D-3B14-9702-3782335952A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{127916BF-7AA3-367D-BCD5-F586A847840B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
