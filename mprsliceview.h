@@ -4,6 +4,7 @@
 #include <QImage>
 #include <QPoint>
 #include <QRect>
+#include <QSizeF>
 #include <QWidget>
 
 #include <array>
@@ -70,6 +71,8 @@ private:
     void invalidateView();
     void rebuildCache() const;
     QSize sourceSliceSize() const;
+    QSizeF sourceSliceSpacing() const;
+    QSizeF sourceSlicePhysicalSize() const;
     QRect targetImageRect(const QSize& canvasSize) const;
     QPointF crosshairDisplayPoint(const QRect& drawRect) const;
     VolumeIndex mapWidgetPointToVolume(const QPoint& pos) const;

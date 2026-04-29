@@ -44,6 +44,40 @@ QString orientationTitle(SliceOrientation orientation)
 
     return QStringLiteral("Unknown");
 }
+
+double chooseNiceScaleLengthMm(double targetMm)
+{
+    if (!(targetMm > 0.0)) {
+        return 0.0;
+    }
+
+    const double exponent = std::floor(std::log10(targetMm));
+    const double base = std::pow(10.0, exponent);
+    static const std::array<double, 4> multipliers = {{1.0, 2.0, 5.0, 10.0}};
+
+    double best = base;
+    for (double multiplier : multipliers) {
+        const double candidate = base * multiplier;
+        if (candidate <= targetMm * 1.001) {
+            best = candidate;
+        } else {
+            break;
+        }
+    }
+
+    return best;
+}
+
+QString formatMillimeterText(double valueMm)
+{
+    if (valueMm >= 10.0 || std::abs(valueMm - std::round(valueMm)) < 1e-3) {
+        return QString::number(qRound(valueMm));
+    }
+    if (valueMm >= 1.0) {
+        return QString::number(valueMm, 'f', 1);
+    }
+    return QString::number(valueMm, 'f', 2);
+}
 }
 
 MprSliceView::MprSliceView(SliceOrientation orientation, QWidget* parent)
@@ -191,6 +225,77 @@ void MprSliceView::paintEvent(QPaintEvent* event)
                          .arg(orientationTitle(m_orientation))
                          .arg(sliceIndex())
                          .arg(qMax(0, sliceCount() - 1)));
+
+    if (m_imageData && m_cachedImageRect.isValid()) {
+        const QFont originalFont = painter.font();
+        const QSize sliceSize = sourceSliceSize();
+        const QSizeF sliceSpacing = sourceSliceSpacing();
+        const QString geometryText =
+            QStringLiteral("Size: %1 x %2\nSpacing: %3 x %4 mm")
+                .arg(sliceSize.width())
+                .arg(sliceSize.height())
+                .arg(QString::number(sliceSpacing.width(), 'f', 3))
+                .arg(QString::number(sliceSpacing.height(), 'f', 3));
+
+        QFont infoFont = painter.font();
+        infoFont.setPointSizeF(qMax(9.0, infoFont.pointSizeF() * 0.88));
+        painter.setFont(infoFont);
+
+        const QFontMetrics metrics(infoFont);
+        const QRect textBounds = metrics.boundingRect(QRect(0, 0, 220, 64),
+                                                      Qt::AlignLeft | Qt::AlignVCenter | Qt::TextWordWrap,
+                                                      geometryText);
+        const QRect infoRect(width() - textBounds.width() - 24,
+                             12,
+                             textBounds.width() + 12,
+                             textBounds.height() + 8);
+
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(QColor(8, 15, 28, 170));
+        painter.drawRoundedRect(infoRect, 6, 6);
+
+        painter.setPen(QColor("#f8fafc"));
+        painter.drawText(infoRect.adjusted(6, 4, -6, -4),
+                         Qt::AlignLeft | Qt::AlignVCenter | Qt::TextWordWrap,
+                         geometryText);
+
+        const QSizeF physicalSize = sourceSlicePhysicalSize();
+        if (physicalSize.isValid() && m_cachedImageRect.width() > 0) {
+            const double mmPerPixel = physicalSize.width() / static_cast<double>(m_cachedImageRect.width());
+            const int maxBarPixels = qBound(40, width() / 5, 140);
+            const double targetMm = mmPerPixel * static_cast<double>(maxBarPixels);
+            const double barLengthMm = chooseNiceScaleLengthMm(targetMm);
+            const int barLengthPixels = qMax(1, qRound(barLengthMm / mmPerPixel));
+
+            const int barRight = width() - 18;
+            const int barBottom = height() - 18;
+            const int barLeft = barRight - barLengthPixels;
+            const int labelHeight = metrics.height();
+
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(QColor(8, 15, 28, 170));
+            painter.drawRoundedRect(QRect(barLeft - 10,
+                                          barBottom - labelHeight - 18,
+                                          barLengthPixels + 20,
+                                          labelHeight + 24),
+                                    6, 6);
+
+            painter.setPen(QPen(QColor(15, 23, 42), 6.0, Qt::SolidLine, Qt::SquareCap));
+            painter.drawLine(QPoint(barLeft, barBottom), QPoint(barRight, barBottom));
+            painter.setPen(QPen(QColor("#f8fafc"), 3.0, Qt::SolidLine, Qt::SquareCap));
+            painter.drawLine(QPoint(barLeft, barBottom), QPoint(barRight, barBottom));
+
+            painter.setPen(QColor("#f8fafc"));
+            painter.drawText(QRect(barLeft - 8,
+                                   barBottom - labelHeight - 14,
+                                   barLengthPixels + 16,
+                                   labelHeight),
+                             Qt::AlignCenter,
+                             QStringLiteral("%1 mm").arg(formatMillimeterText(barLengthMm)));
+        }
+
+        painter.setFont(originalFont);
+    }
 
     if (m_brushEditingEnabled) {
         painter.setPen(QColor("#fbbf24"));
@@ -394,24 +499,70 @@ QSize MprSliceView::sourceSliceSize() const
     return {};
 }
 
-QRect MprSliceView::targetImageRect(const QSize& canvasSize) const
+QSizeF MprSliceView::sourceSliceSpacing() const
 {
-    const QSize sourceSize = sourceSliceSize();
-    if (!sourceSize.isValid()) {
+    if (!m_imageData) {
         return {};
     }
 
-    QSize scaled = sourceSize;
-    scaled.scale(canvasSize, Qt::KeepAspectRatio);
+    double spacing[3] = {1.0, 1.0, 1.0};
+    m_imageData->GetSpacing(spacing);
+
+    const double safeSpacingX = qMax(std::abs(spacing[0]), 1e-6);
+    const double safeSpacingY = qMax(std::abs(spacing[1]), 1e-6);
+    const double safeSpacingZ = qMax(std::abs(spacing[2]), 1e-6);
+
+    switch (m_orientation) {
+    case SliceOrientation::Axial:
+        return QSizeF(safeSpacingX, safeSpacingY);
+    case SliceOrientation::Coronal:
+        return QSizeF(safeSpacingX, safeSpacingZ);
+    case SliceOrientation::Sagittal:
+        return QSizeF(safeSpacingY, safeSpacingZ);
+    }
+
+    return {};
+}
+
+QSizeF MprSliceView::sourceSlicePhysicalSize() const
+{
+    if (!m_imageData) {
+        return {};
+    }
+
+    const QSize sliceSize = sourceSliceSize();
+    if (!sliceSize.isValid()) {
+        return {};
+    }
+
+    const QSizeF sliceSpacing = sourceSliceSpacing();
+    return QSizeF(static_cast<double>(sliceSize.width()) * sliceSpacing.width(),
+                  static_cast<double>(sliceSize.height()) * sliceSpacing.height());
+}
+
+QRect MprSliceView::targetImageRect(const QSize& canvasSize) const
+{
+    const QSizeF physicalSize = sourceSlicePhysicalSize();
+    if (!physicalSize.isValid()) {
+        return {};
+    }
+
+    // MPR 显示必须按物理尺寸缩放，而不是只按体素个数缩放。
+    // 否则当 Z spacing 与 X/Y spacing 不一致时，冠状位和矢状位会被明显拉伸或压扁。
+    QSizeF scaled = physicalSize;
+    scaled.scale(QSizeF(canvasSize), Qt::KeepAspectRatio);
 
     const double zoomFactor = std::max(0.1, static_cast<double>(m_zoomPercent) / 100.0);
-    scaled = QSize(qMax(1, qRound(static_cast<double>(scaled.width()) * zoomFactor)),
-                   qMax(1, qRound(static_cast<double>(scaled.height()) * zoomFactor)));
+    scaled = QSizeF(qMax(1.0, scaled.width() * zoomFactor),
+                    qMax(1.0, scaled.height() * zoomFactor));
 
-    return QRect((canvasSize.width() - scaled.width()) / 2,
-                 (canvasSize.height() - scaled.height()) / 2,
-                 scaled.width(),
-                 scaled.height());
+    const int targetWidth = qMax(1, qRound(scaled.width()));
+    const int targetHeight = qMax(1, qRound(scaled.height()));
+
+    return QRect((canvasSize.width() - targetWidth) / 2,
+                 (canvasSize.height() - targetHeight) / 2,
+                 targetWidth,
+                 targetHeight);
 }
 
 QPointF MprSliceView::crosshairDisplayPoint(const QRect& drawRect) const
